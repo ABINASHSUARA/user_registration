@@ -3,13 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body
+        {
+            color: darkgreen;
+            font-display: bold;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            text-align: center;
+            background: linear-gradient(1240deg,aqua,pink);
+
+        }
+        h1
+        {
+            border: dotted;
+            border-radius: 20px;
+            background-color: bisque;
+            text-align: center;
+            color:blueviolet;
+        }
+        button
+		{
+			background-color:pink;
+			padding: 7px 15px;
+			border-radius: 20px;
+        }
+    </style>
     <title>registration</title>
 </head>
-<body>
-    <center>
-        <h1>PLEASE REGITER HERE</h1>
 
-        <form method="POST">
+<body>
+    
+        <h1>PLEASE REGISTER HERE</h1>
+        
+
+        <form method="POST" enctype="multipart/form-data">
+        <table>
 
             {% csrf_token %}
 
@@ -17,9 +45,9 @@
 
             {{ pfo.as_p }}
 
-            <input type="submit" value="Register">
-
+           <button>REGISTER</button>
+        </table>
         </form>
-    </center>
+    
 </body>
 </html>
