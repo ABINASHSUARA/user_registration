@@ -1,53 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        body
-        {
-            color: darkgreen;
-            font-display: bold;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            text-align: center;
-            background: linear-gradient(1240deg,aqua,pink);
+{% extends 'dummy.html' %}
 
-        }
-        h1
-        {
-            border: dotted;
-            border-radius: 20px;
-            background-color: bisque;
-            text-align: center;
-            color:blueviolet;
-        }
-        button
-		{
-			background-color:pink;
-			padding: 7px 15px;
-			border-radius: 20px;
-        }
-    </style>
-    <title>registration</title>
-</head>
+{% block title %}
+    <title>Registration Page</title>
 
-<body>
-    
-        <h1>PLEASE REGISTER HERE</h1>
-        
+{% endblock %}
 
-        <form method="POST" enctype="multipart/form-data">
-        <table>
 
-            {% csrf_token %}
+{% block body_block %}
 
-            {{ ufo.as_p }}
+<h1>Fill the form and Register</h1>
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+        {{ufo.as_p}}
+        {{pfo.as_p}}
 
-            {{ pfo.as_p }}
 
-           <button>REGISTER</button>
-        </table>
-        </form>
-    
-</body>
-</html>
+        <button>REGISTER</button>
+</form>
+
+{% endblock %}
