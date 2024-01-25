@@ -1,3 +1,93 @@
+<style>
+    body
+    {
+        background-color: black;
+
+    }
+
+    div
+    {
+        position: relative;
+        top: 200px;
+        text-align: center;
+
+    }
+
+    div>span
+    {
+        width: 25px;
+        height: 25px;
+        display: inline-block;
+        margin: 50px;
+        border-radius: 100%;
+        box-shadow: 0 0 10px white;
+
+
+        animation: zoom 1s linear 5s infinite normal;
+
+    }
+
+
+    div>span:first-child
+    {
+        background-color:red;
+        animation-delay: 0.2s;
+    }
+    div>span:nth-child(2)
+    {
+        background-color: rgb(0, 255, 153);
+        animation-delay: 0.4s;
+    }
+    div>span:nth-child(3)
+    {
+        background-color: rgb(255, 0, 238);
+        animation-delay: 0.6s;
+    }
+    div>span:nth-child(4)
+    {
+        background-color: black;
+        animation-delay: 0.8s;
+    }
+    div>span:nth-child(5)
+    {
+        background-color: yellow;
+        animation-delay: 0.6s;
+    }
+    div>span:nth-child(6)
+    {
+        background-color: black;
+        animation-delay: 0.6s;
+    }
+    div>span:nth-child(7)
+    {
+        background-color: rgb(255, 0, 238);
+        animation-delay: 0.6s;
+    }
+    div>span:nth-child(8)
+    {
+        background-color: rgb(0, 255, 153);
+        animation-delay: 0.6s;
+    }
+    div>span:last-child
+    {
+        background-color: red;
+        animation-delay: 0.2s;
+    }
+
+    @keyframes zoom
+    {
+        0%,100%
+        {
+            transform: translateY(80px);
+        }
+
+        50%
+        {
+            transform: translateY(-110px);
+        }
+    }
+
+</style>
 {% extends 'dummy.html' %}
 
 {% block title %}
@@ -7,15 +97,25 @@
 
 
 {% block body_block %}
+
 {% if username %}
 
-    
 
-<h1>Welcome to Home page mr/ms {{username}}</h1>
-
+    <h1>Welcome to Home page mr/ms {{username}}</h1>
 {% else %}
-
-<h1>Welcome to Home page</h1>
+    <h1>Welcome to Home page</h1>
 {% endif %}
+
+<div>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
 
 {% endblock %}

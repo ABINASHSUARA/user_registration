@@ -36,7 +36,12 @@ border-radius: 20px;
 }
 </style>
   </head>
-  <body bgcolor="orange">
+
+
+
+
+
+  <body>
     <center>
     <nav class="nav" style="background-color: pink">
         <a href="{% url 'admin:index' %}" class="nav-link">Admin Page</a>
@@ -45,6 +50,7 @@ border-radius: 20px;
           <a href="{% url 'registration' %}" class="nav-link">Sign-up Page</a>
          
         {% if user.is_authenticated %}
+          <a href="{% url 'profile' %}" class="nav-link">View Profile</a>
           <a href="{% url 'user_logout' %}" class="nav-link">Logout</a>
         {% else %}
           <a href="{% url 'user_login' %}" class="nav-link">Login</a>
